@@ -87,9 +87,9 @@ a {
    =========================== */
 .header {
   position: sticky;
-  top: 0;
+  top: 1px;
   z-index: 1000;
-  padding: var(--spacing-sm) 0;
+  padding: 0;
 }
 
 .header-content {
@@ -97,10 +97,11 @@ a {
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 1000px 1000px 40px 1000px;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 0 35px 0 20px;
   box-shadow: 0 0.2px 2px rgba(0, 0, 255, 0.25);
 }
 
