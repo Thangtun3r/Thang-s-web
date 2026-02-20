@@ -1,0 +1,343 @@
+<!-- Global Header - Copy this to all pages -->
+<header id="brx-header" class="brx-sticky">
+  <section class="header-section">
+    <div class="header-container glass-effect">
+      <div class="header-left">
+        <div class="logo-block logo">
+          <a class="logo-noshrink" href="/">
+            <img width="80" height="80" src="/wp-content/uploads/2026/02/LOGO-SVG.svg" class="logo-img" alt="Thangtuner" loading="eager">
+          </a>
+          <h3 class="logo-shrink smooth-hover">
+            <a href="/">Thangtuner</a>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <nav class="header-nav" aria-label="Menu">
+          <ul class="nav-items">
+            <li class="menu-item"><a class="nav-link smooth-hover" href="/">PLAY</a></li>
+            <li class="menu-item"><a class="nav-link smooth-hover" href="/studies/">RESEARCH</a></li>
+            <li class="menu-item"><a class="nav-link smooth-hover" href="/music/">MUSIC</a></li>
+            <li class="menu-item"><a class="nav-link smooth-hover" href="/other-works/">DESIGN PROJECTS</a></li>
+            <li class="menu-item"><a class="nav-link special smooth-hover" href="/about-me/">About me ➭</a></li>
+          </ul>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Open" aria-expanded="false">
+            <span class="toggle-wrap">
+              <span class="toggle-inner"></span>
+            </span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mobile Menu Offcanvas -->
+  <div class="mobile-offcanvas" id="mobileOffcanvas" aria-label="Mobile Menu">
+    <div class="offcanvas-inner">
+      <a class="mobile-link smooth-hover" href="/">PLAY</a>
+      <a class="mobile-link smooth-hover" href="/studies/">RESEARCH</a>
+      <a class="mobile-link smooth-hover" href="/music/">MUSIC</a>
+      <a class="mobile-link smooth-hover" href="/other-works/">DESIGN PROJECTS</a>
+      <div class="divider-line"></div>
+      <a class="mobile-link special smooth-hover" href="/about-me/">About me ➭</a>
+    </div>
+  </div>
+</header>
+
+<style>
+/* WordPress Bricks Header - Exact Copy */
+#brx-header .logo-block { 
+  position: relative; 
+}
+
+.logo-noshrink { 
+  opacity: 1; 
+  visibility: visible; 
+  transition: opacity 0.4s ease, transform 0.4s ease; 
+  transform: scale(1);  
+  font-size: 24px; 
+}
+
+.logo-shrink { 
+  position: absolute; 
+  top: 50%; 
+  left: 0; 
+  transform: translateY(-100%) scale(0.8); 
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.4s ease, transform 0.4s ease; 
+  white-space: nowrap;  
+  font-size: 18px; 
+}
+
+#brx-header .logo-block.logo { 
+  height: 100px; 
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+  overflow: hidden;
+}
+
+.smooth-hover { 
+  transition: all 0.3s ease-in-out;
+}
+
+.smooth-hover:hover { 
+  transition: all 0.1s ease-out;
+}
+
+@media (min-width: 901px) {
+  #brx-header.scrolling .logo-noshrink { 
+    opacity: 0; 
+    visibility: hidden; 
+    transform: scale(0.8); 
+  }
+  
+  #brx-header.scrolling .logo-shrink { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(-50%) scale(1); 
+  }
+  
+  #brx-header.scrolling .logo { 
+    height: 45px !important; 
+    padding-top: 0 !important; 
+    padding-bottom: 0 !important; 
+  }
+  
+  #brx-header.scrolling .header-container { 
+    min-height: 0 !important; 
+    height: auto !important; 
+    transition: all 0.4s ease; 
+  }
+}
+
+@media (max-width: 900px) {
+  #brx-header.scrolling .logo-noshrink { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: scale(1); 
+  }
+  
+  #brx-header.scrolling .logo-shrink { 
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(-50%) scale(0.8); 
+  }
+  
+  #brx-header.scrolling .logo { 
+    height: 100px !important; 
+    padding-top: initial !important; 
+    padding-bottom: initial !important; 
+  }
+  
+  .logo-noshrink { 
+    font-size: 20px;  
+  } 
+  
+  .logo-shrink { 
+    font-size: 16px;  
+  }
+}
+
+.logo-img {
+  width: 80px; 
+  height: 80px;
+}
+
+.logo-shrink {
+  font-size: 25px; 
+  font-family: "PT Serif"; 
+  font-weight: 400; 
+  font-style: italic; 
+  color: #7b00ff; 
+  padding-bottom: 6px;
+  margin-bottom: 0;
+}
+
+.logo-shrink:hover {
+  color: #f44336;
+}
+
+.logo-block {
+  align-self: center !important; 
+  justify-content: center; 
+  align-items: flex-start;
+}
+
+.header-left {
+  flex-direction: column; 
+  max-width: 20%; 
+  min-width: 20%;
+}
+
+@media (max-width: 991px) {
+  .header-left {
+    width: 20%;
+  }
+}
+
+.nav-link {
+  margin-bottom: 0;
+}
+
+.nav-link:hover {
+  color: #ff5722;
+}
+
+.nav-link.special {
+  font-family: "PT Serif"; 
+  font-style: italic; 
+  font-weight: 400; 
+  font-size: 23px; 
+  margin-bottom: 3px;
+}
+
+.nav-link.special:hover {
+  color: #ff5722;
+}
+
+.nav-items {
+  flex-direction: row; 
+  font-size: 20px; 
+  font-family: "Roboto"; 
+  color: #7b00ff; 
+  font-weight: 400; 
+  line-height: 1; 
+  letter-spacing: -1px; 
+  max-height: 100%; 
+  flex-wrap: nowrap;
+}
+
+.mobile-toggle .toggle-inner {
+  --toggle-bar-height: 4px;
+}
+
+.mobile-toggle .toggle-wrap {
+  color: #aa59ff;
+}
+
+@media (max-width: 478px) {
+  .mobile-toggle .toggle-wrap {
+    color: #7b00ff;
+  }
+  
+  .mobile-toggle .toggle-inner {
+    --toggle-bar-height: 3px;
+  }
+}
+
+.nav-items [aria-current="page"] {
+  text-decoration: line-through; 
+  color: #e09fea;
+}
+
+.header-nav {
+  max-height: 100%;
+}
+
+.nav-items {
+  gap: 50px;
+}
+
+@media (max-width: 478px) {
+  .header-nav {
+    height: 100px;
+  }
+}
+
+.header-right {
+  align-self: center !important; 
+  align-items: flex-end; 
+  flex-wrap: nowrap; 
+  justify-content: center; 
+  min-width: 30%;
+}
+
+@media (max-width: 478px) {
+  .header-right {
+    justify-content: center; 
+    align-self: center !important; 
+    align-items: center; 
+    width: 30%;
+  }
+}
+
+  .header-container {
+    flex-direction: row; 
+    column-gap: 0px; 
+    position: sticky; 
+    top: 1px; 
+    border-bottom-right-radius: 15px; 
+    border-bottom-left-radius: 15px; 
+    width: 100%; 
+    padding-right: 35px; 
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+@media (max-width: 767px) {
+  .header-container {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 478px) {
+  .header-container {
+    flex-wrap: nowrap; 
+    justify-content: space-between;
+  }
+}
+
+.header-section {
+  flex-direction: column; 
+  z-index: 1001; 
+  position: absolute; 
+  padding-right: 20px; 
+  padding-bottom: 15px; 
+  padding-left: 20px;
+}
+
+.glass-effect {  
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(10px);   
+  border-radius: 0px 1000px 40px 1000px;  
+  border: 0px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 .2px 2px rgba(0, 0, 255, 0.25); 
+}
+
+@media (max-width: 478px) {
+  .header-section {
+    flex-wrap: nowrap;
+  }
+}
+</style>
+
+<script>
+// Header scroll effect
+(function() {
+  const header = document.getElementById('brx-header');
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 50) {
+      header.classList.add('scrolling');
+    } else {
+      header.classList.remove('scrolling');
+    }
+  });
+  
+  // Mobile toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileOffcanvas = document.getElementById('mobileOffcanvas');
+  
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function() {
+      const isOpen = mobileOffcanvas.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+  }
+})();
+</script>

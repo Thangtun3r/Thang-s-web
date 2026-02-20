@@ -1,47 +1,43 @@
 // ===========================
-// Mobile Menu Toggle
+// WordPress Bricks Header Scroll
 // ===========================
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-
-if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-  });
-
-  // Close menu when clicking links
-  const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  });
-}
-
-// ===========================
-// Header Scroll Effect
-// ===========================
-const header = document.getElementById('header');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
+(function() {
+  const header = document.getElementById('brx-header');
   
-  if (currentScroll > 100) {
-    header?.classList.add('scrolled');
-  } else {
-    header?.classList.remove('scrolled');
-  }
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 50) {
+      header.classList.add('scrolling');
+    } else {
+      header.classList.remove('scrolling');
+    }
+  });
   
-  lastScroll = currentScroll;
-});
+  // Mobile toggle (Bricks header)
+  const nav = document.getElementById('brxe-ockggh');
+  const offcanvas = document.getElementById('brxe-eumaod');
+  const openButton = document.getElementById('brxe-gynkgg');
+  const closeButton = document.getElementById('brxe-lhybfn');
+
+  const setMenuOpen = (isOpen) => {
+    nav?.classList.toggle('brx-open', isOpen);
+    offcanvas?.classList.toggle('brx-open', isOpen);
+    openButton?.setAttribute('aria-expanded', String(isOpen));
+    closeButton?.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+
+  openButton?.addEventListener('click', () => setMenuOpen(true));
+  closeButton?.addEventListener('click', () => setMenuOpen(false));
+
+  offcanvas?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+})();
 
 // ===========================
 // Back to Top Button
 // ===========================
-const backToTop = document.getElementById('backToTop');
+const backToTop = document.getElementById('brxe-bpxpbg');
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 400) {
