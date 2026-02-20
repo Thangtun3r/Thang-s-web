@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/thangtun/public_html/
+    - export DEPLOYPATH=/home/thangtun/sub.thangtuner.com/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -R 2025 $DEPLOYPATH
     - /bin/cp -R 2026 $DEPLOYPATH
@@ -12,8 +12,3 @@ deployment:
     - /bin/cp -R studies $DEPLOYPATH
     - /bin/cp -R wp-content $DEPLOYPATH
     - /bin/cp -R wp-includes $DEPLOYPATH
-
-    - export DEPLOYPATH=/home/thangtun/sub.thangtuner.com/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R wp-content $DEPLOYPATH
