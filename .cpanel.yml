@@ -12,3 +12,8 @@ deployment:
     - /bin/cp -R studies $DEPLOYPATH
     - /bin/cp -R wp-content $DEPLOYPATH
     - /bin/cp -R wp-includes $DEPLOYPATH
+
+    - export DEPLOYPATH=/home/thangtun/sub.thangtuner.com/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R wp-content $DEPLOYPATH
