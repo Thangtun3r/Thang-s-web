@@ -59,8 +59,43 @@ backToTop?.addEventListener('click', () => {
 });
 
 // ===========================
-// Selection Style
+// Dark Mode Toggle
+// ===========================
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle?.querySelector('.theme-icon');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+
+// Update icon based on current theme
+if (themeIcon) {
+  themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+}
+
+// Toggle theme on button click
+themeToggle?.addEventListener('click', () => {
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  
+  if (themeIcon) {
+    themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  }
+  
+  // Add a fun rotation animation
+  themeToggle.style.transform = 'rotate(360deg)';
+  setTimeout(() => {
+    themeToggle.style.transform = '';
+  }, 300);
+});
+
+// ===========================
+// Initialization
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Site loaded successfully! 🎮');
+  console.log(`Site loaded successfully! 🎮 Theme: ${currentTheme}`);
 });
