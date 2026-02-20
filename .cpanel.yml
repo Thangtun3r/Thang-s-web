@@ -3,6 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/thangtun/sub.thangtuner.com/
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R 2025 $DEPLOYPATH
     - /bin/cp -R 2026 $DEPLOYPATH
     - /bin/cp -R about-me $DEPLOYPATH
